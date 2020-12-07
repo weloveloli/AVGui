@@ -1,5 +1,8 @@
-﻿// Copyright © 2017-2020 Chromely Projects. All rights reserved.
-// Use of this source code is governed by MIT license that can be found in the LICENSE file.
+﻿// -----------------------------------------------------------------------
+// <copyright file="TodoListController.cs" company="Weloveloli">
+//     Copyright (c) Weloveloli.  All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
 
 namespace Weloveloli.AVGui.Controllers
 {
@@ -210,37 +213,30 @@ namespace Weloveloli.AVGui.Controllers
         /// Defines the Add.
         /// </summary>
         Add,
-
         /// <summary>
         /// Defines the Delete.
         /// </summary>
         Delete,
-
         /// <summary>
         /// Defines the All.
         /// </summary>
         All,
-
         /// <summary>
         /// Defines the AllActive.
         /// </summary>
         AllActive,
-
         /// <summary>
         /// Defines the AllCompleted.
         /// </summary>
         AllCompleted,
-
         /// <summary>
         /// Defines the ClearCompleted.
         /// </summary>
         ClearCompleted,
-
         /// <summary>
         /// Defines the ToggleAll.
         /// </summary>
         ToggleAll,
-
         /// <summary>
         /// Defines the ToggleItemComplete.
         /// </summary>

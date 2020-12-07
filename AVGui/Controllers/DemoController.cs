@@ -1,5 +1,8 @@
-﻿// Copyright © 2017-2020 Chromely Projects. All rights reserved.
-// Use of this source code is governed by MIT license that can be found in the LICENSE file.
+﻿// -----------------------------------------------------------------------
+// <copyright file="DemoController.cs" company="Weloveloli">
+//     Copyright (c) Weloveloli.  All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
 
 namespace Weloveloli.AVGui.Controllers
 {

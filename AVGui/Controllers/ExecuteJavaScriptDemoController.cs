@@ -1,32 +1,44 @@
-﻿// Copyright © 2017-2020 Chromely Projects. All rights reserved.
-// Use of this source code is governed by MIT license that can be found in the LICENSE file.
-
-using System;
-using System.Text.Json;
-using Chromely.Core.Configuration;
-using Chromely.Core.Logging;
-using Chromely.Core.Network;
-using Microsoft.Extensions.Logging;
+﻿// -----------------------------------------------------------------------
+// <copyright file="ExecuteJavaScriptDemoController.cs" company="Weloveloli">
+//     Copyright (c) Weloveloli.  All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
 
 namespace Weloveloli.AVGui.Controllers
 {
+    using System;
+    using System.Text.Json;
+    using Chromely.Core.Configuration;
+    using Chromely.Core.Logging;
+    using Chromely.Core.Network;
+    using Microsoft.Extensions.Logging;
+
     /// <summary>
     /// The demo controller.
     /// </summary>
     [ControllerProperty(Name = "ExecuteJavaScriptDemoController")]
     public class ExecuteJavaScriptDemoController : ChromelyController
     {
+        /// <summary>
+        /// Defines the _config.
+        /// </summary>
         private readonly IChromelyConfiguration _config;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ExecuteJavaScriptDemoController"/> class.
         /// </summary>
+        /// <param name="config">The config<see cref="IChromelyConfiguration"/>.</param>
         public ExecuteJavaScriptDemoController(IChromelyConfiguration config)
         {
             _config = config;
             RegisterRequest("/executejavascript/execute", Execute);
         }
 
+        /// <summary>
+        /// The Execute.
+        /// </summary>
+        /// <param name="request">The request<see cref="IChromelyRequest"/>.</param>
+        /// <returns>The <see cref="IChromelyResponse"/>.</returns>
         private IChromelyResponse Execute(IChromelyRequest request)
         {
             var response = new ChromelyResponse(request.Id)
@@ -63,14 +75,15 @@ namespace Weloveloli.AVGui.Controllers
             return response;
         }
 
+        /// <summary>
+        /// Defines the <see cref="ScriptInfo" />.
+        /// </summary>
         private class ScriptInfo
         {
             /// <summary>
             /// Initializes a new instance of the <see cref="ScriptInfo"/> class.
             /// </summary>
-            /// <param name="postData">
-            /// The post data.
-            /// </param>
+            /// <param name="postData">The postData<see cref="object"/>.</param>
             public ScriptInfo(object postData)
             {
                 FrameName = string.Empty;
@@ -88,19 +101,29 @@ namespace Weloveloli.AVGui.Controllers
             }
 
             /// <summary>
-            /// Gets the frame name.
+            /// Gets the frame name...
             /// </summary>
             public string FrameName { get; }
 
             /// <summary>
-            /// Gets the script.
+            /// Gets the Script.
             /// </summary>
             public string Script { get; }
         }
 
+        /// <summary>
+        /// Defines the <see cref="scriptInfo" />.
+        /// </summary>
         private class scriptInfo
         {
+            /// <summary>
+            /// Gets or sets the framename.
+            /// </summary>
             public string framename { get; set; }
+
+            /// <summary>
+            /// Gets or sets the script.
+            /// </summary>
             public string script { get; set; }
         }
     }
